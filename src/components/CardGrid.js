@@ -4,7 +4,7 @@ import CardJob from "./CardJob";
 import { useJobsData } from "../hooks/useJobsData";
 
 const CardGrid = ({ category }) => {
-  const { data: jobList, loading } = useJobsData(category);
+  const jobList = useJobsData(category);
 
   return (
     <section className="card-grid">
