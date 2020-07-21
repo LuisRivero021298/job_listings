@@ -1,14 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CardJob = ({ job }) => {
-  return <div className="card-job"></div>;
+const CardJob = ({ jobs }) => {
+  console.log(jobs);
+  return (
+    <article className="card-job">
+      <div className="card-header"></div>
+      <div className="card-body"></div>
+    </article>
+  );
 };
 
 CardJob.defaultProps = {};
 
 CardJob.propTypes = {
-  job: PropTypes.object.isRequired,
+  jobs: PropTypes.array.isRequired,
 };
 
 export default CardJob;
