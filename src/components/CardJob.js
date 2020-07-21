@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import LabelHeader from "./LabelHeader";
 
 const CardJob = ({ job }) => {
   const { role, level, languages, tools } = job;
   const labels = [role, level, ...languages, ...tools];
-
-  console.log(labels);
 
   return (
     <article className="card-job" key={job.id}>
@@ -15,6 +14,8 @@ const CardJob = ({ job }) => {
         </div>
         <div className="name-company">
           <h3>{job.company}</h3>
+          <LabelHeader show={job.new} nameProp="new" />
+          <LabelHeader show={job.featured} nameProp="featured" />
         </div>
         <h2>{job.position}</h2>
         <div className="info-job">
