@@ -1,12 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CardJob = ({ jobs }) => {
-  console.log(jobs);
+const CardJob = ({ job }) => {
+  const { role, level, languages, tools } = job;
+  const labels = [role, level, ...languages, ...tools];
+
+  console.log(labels);
+
   return (
-    <article className="card-job">
-      <div className="card-header"></div>
-      <div className="card-body"></div>
+    <article className="card-job" key={job.id}>
+      <div className="card-info">
+        <div className="card-logo">
+          <img src={job.logo} alt={job.company} />
+        </div>
+        <div className="name-company">
+          <h3>{job.company}</h3>
+        </div>
+        <h2>{job.position}</h2>
+        <div className="info-job">
+          <span>{job.postedAt}</span>
+          <span>{job.contract}</span>
+          <span>{job.location}</span>
+        </div>
+      </div>
+      <hr></hr>
+      <div className="card-labels">
+        {labels.map((label) => (
+          <span key={label + 1} className="card-label">
+            {label}
+          </span>
+        ))}
+      </div>
     </article>
   );
 };
@@ -14,7 +38,7 @@ const CardJob = ({ jobs }) => {
 CardJob.defaultProps = {};
 
 CardJob.propTypes = {
-  jobs: PropTypes.array.isRequired,
+  jobs: PropTypes.object,
 };
 
 export default CardJob;

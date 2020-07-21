@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import jobs from "./data/data";
-import CardJob from "./components/CardJob";
+import CardGrid from "./components/CardGrid";
 
-function App() {
+const App = () => {
+  const [categories, setCategories] = useState(["Frontend"]);
   return (
     <>
       <header className="App-header"></header>
       <main className="App-main">
-        <CardJob jobs={jobs} />
+        {categories.map((category) => (
+          <CardGrid key={category} category={category} />
+        ))}
       </main>
     </>
   );
-}
+};
 
 export default App;
