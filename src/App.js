@@ -3,7 +3,7 @@ import "./App.css";
 import CardGrid from "./components/CardGrid";
 
 const App = () => {
-  const [categories, setCategories] = useState(["Frontend"]);
+  const [categories, setCategories] = useState([""]);
   return (
     <>
       <header className="App-header">
