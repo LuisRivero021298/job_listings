@@ -6,7 +6,9 @@ const App = () => {
   const [categories, setCategories] = useState(["Frontend"]);
   return (
     <>
-      <header className="App-header"></header>
+      <header className="App-header">
+        <img src="images/bg-header-mobile.svg" alt="bg-header" />
+      </header>
       <main className="App-main">
         {categories.map((category) => (
           <CardGrid key={category} category={category} />

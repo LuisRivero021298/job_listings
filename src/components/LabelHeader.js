@@ -4,18 +4,29 @@ import PropTypes from "prop-types";
 const LabelHeader = ({ show, nameProp }) => {
   if (nameProp === "new") {
     if (show) {
-      return <span>New!</span>;
+      return (
+        <div className="new-job">
+          <span>New!</span>
+        </div>
+      );
     }
     return <></>;
   }
   if (nameProp === "featured") {
     if (show) {
-      return <span>featured</span>;
+      return (
+        <div className="featured">
+          <span>featured</span>
+        </div>
+      );
     }
     return <></>;
   }
 };
 
-LabelHeader.propTypes = {};
+LabelHeader.propTypes = {
+  show: PropTypes.bool.isRequired,
+  nameProp: PropTypes.string.isRequired,
+};
 
 export default LabelHeader;

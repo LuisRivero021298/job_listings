@@ -4,13 +4,18 @@ import LabelHeader from "./LabelHeader";
 
 const CardJob = ({ job }) => {
   const { role, level, languages, tools } = job;
-  const labels = [role, level, ...languages, ...tools];
+  const labels = [role, level, ...tools, ...languages];
 
   return (
-    <article className="card-job" key={job.id}>
+    <article
+      className={`card-job ${job.featured ? "border-card" : ""}`}
+      key={job.id}
+    >
       <div className="card-info">
         <div className="card-logo">
-          <img src={job.logo} alt={job.company} />
+          <div className="logo">
+            <img src={job.logo} alt={job.company} />
+          </div>
         </div>
         <div className="name-company">
           <h3>{job.company}</h3>
@@ -27,19 +32,21 @@ const CardJob = ({ job }) => {
       <hr></hr>
       <div className="card-labels">
         {labels.map((label) => (
-          <span key={label + 1} className="card-label">
-            {label}
-          </span>
+          <div key={label + 1} className="card-label">
+            <div>{label}</div>
+          </div>
         ))}
       </div>
     </article>
   );
 };
 
-CardJob.defaultProps = {};
+CardJob.defaultProps = {
+  job: {},
+};
 
 CardJob.propTypes = {
-  jobs: PropTypes.object,
+  job: PropTypes.object.isRequired,
 };
 
 export default CardJob;
