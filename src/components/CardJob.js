@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import LabelHeader from "./LabelHeader";
 
 const CardJob = ({ job }) => {
-  const { role, level, languages, tools } = job;
-  const labels = [role, level, ...tools, ...languages];
+  const { role, level, languages, tools, labels } = job;
 
   return (
     <article
