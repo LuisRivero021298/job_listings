@@ -27,6 +27,31 @@ body {
   margin-top: 50px;
 }
 
+.show-labels-selected{
+  width: 88%;
+  max-width: 330px;
+  margin: 0 auto;
+  margin-top: -85px;
+  margin-bottom: 45px;
+  position: relative;
+  min-height: 100px;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.clear-labels{
+  display: flex;
+  align-items: center;
+}
+.clear-labels button{
+  width: 60px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: var(--very-dark-grayish-cyan);
+  font-weight: 700;
+}
 .card-grid {
   width: 88%;
   max-width: 330px;
