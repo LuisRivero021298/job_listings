@@ -3,9 +3,7 @@ import "./App.css";
 import CardGrid from "./components/CardGrid";
 
 const App = () => {
-  const [categories, setCategories] = useState([
-    ["Frontend", "Junior", "React"],
-  ]);
+  const [categories, setCategories] = useState([""]);
   return (
     <>
       <header className="App-header">
@@ -13,7 +11,11 @@ const App = () => {
       </header>
       <main className="App-main">
         {categories.map((category) => (
-          <CardGrid key={category} category={category} />
+          <CardGrid
+            key={category}
+            category={category}
+            setCategories={setCategories}
+          />
         ))}
       </main>
     </>

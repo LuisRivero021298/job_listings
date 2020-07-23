@@ -1,23 +1,7 @@
 import data from "../data/data";
 
 export const getJobs = (category) => {
-  const { role, level } = category;
-  if (category === "") {
-    return data;
-  }
-
-  const roleList = data.filter((job) => {
-    if (role && level) {
-      return job.role === role && job.level === level;
-    }
-    if (role && !level) {
-      return job.role === role;
-    }
-    if (!role && level) {
-      return job.level === level;
-    }
-  });
-
+  console.log(category);
   const jobList = data.map((job) => {
     return {
       id: job.id,
@@ -32,6 +16,10 @@ export const getJobs = (category) => {
       labels: [job.role, job.level, ...job.tools, ...job.languages],
     };
   });
+
+  if (category === "") {
+    return jobList;
+  }
 
   const filterJob = () => {
     return jobList.filter((job) => {

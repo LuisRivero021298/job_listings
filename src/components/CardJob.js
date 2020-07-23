@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import LabelHeader from "./LabelHeader";
 
-const CardJob = ({ job }) => {
-  const { role, level, languages, tools, labels } = job;
+const CardJob = ({ job, setCategories }) => {
+  const { labels } = job;
+
+  const handleFilterJob = (e) => {
+    const nameCategory = e.target.innerHTML;
+
+    setCategories(([category]) => {
+      if (category === "") {
+        return [[nameCategory]];
+      }
+      return [[...category, nameCategory]];
+    });
+  };
 
   return (
     <article
@@ -32,7 +43,7 @@ const CardJob = ({ job }) => {
       <div className="card-labels">
         {labels.map((label) => (
           <div key={label + 1} className="card-label">
-            <div>{label}</div>
+            <div onClick={handleFilterJob}>{label}</div>
           </div>
         ))}
       </div>
