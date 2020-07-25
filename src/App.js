@@ -1,30 +1,55 @@
 import React, { useState } from "react";
-import "./App.css";
 import CardGrid from "./components/CardGrid";
 
 const App = () => {
   const [categories, setCategories] = useState([""]);
 
-  console.log(categories);
-  const LabelsSelected = () => {
-    const handleClearFilter = () => {
+  const LabelsSelected = ({ categories, setCategories }) => {
+    const handleClearAllFilters = () => {
       setCategories([""]);
+    };
+
+    const handleClearAfilter = (e) => {
+      let item = e.target.value;
+
+      if (e.target.localName === "img") {
+        item = e.target.parentElement.value;
+      }
+
+      setCategories(([categories]) => {
+        let i = categories.indexOf(item);
+
+        if (i !== -1) {
+          categories.splice(i, 1);
+        }
+        if (categories.length === 0) {
+          return [""];
+        }
+        return [categories];
+      });
     };
 
     return (
       <>
-        <article className="show-labels-selected card-job">
+        <section className="show-labels-selected card-job">
           <div className="card-labels">
             {categories[0].map((category) => (
-              <div key={category + 2} className="card-label">
+              <article key={category + 2} className="card-label">
                 <div>{category}</div>
-              </div>
+                <button
+                  value={category}
+                  onClick={handleClearAfilter}
+                  className="btn-clear"
+                >
+                  <img src="images/icon-remove.svg" alt="X" />
+                </button>
+              </article>
             ))}
           </div>
           <div className="clear-labels">
-            <button onClick={handleClearFilter}>Clear</button>
+            <button onClick={handleClearAllFilters}>Clear</button>
           </div>
-        </article>
+        </section>
       </>
     );
   };
@@ -35,7 +60,12 @@ const App = () => {
         <img src="images/bg-header-mobile.svg" alt="bg-header" />
       </header>
       <main className="App-main">
-        {categories[0] === "" ? null : <LabelsSelected />}
+        {categories[0] === "" ? null : (
+          <LabelsSelected
+            categories={categories}
+            setCategories={setCategories}
+          />
+        )}
         {categories.map((category) => (
           <CardGrid
             key={category}

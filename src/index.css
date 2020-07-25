@@ -27,23 +27,45 @@ body {
   margin-top: 50px;
 }
 
-.show-labels-selected{
+section.show-labels-selected {
   width: 88%;
   max-width: 330px;
-  margin: 0 auto;
+  margin: 45px auto;
   margin-top: -85px;
-  margin-bottom: 45px;
   position: relative;
   min-height: 100px;
-  padding-top: 20px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr auto;
 }
-.clear-labels{
+.show-labels-selected .card-labels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.show-labels-selected article.card-label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding-right: 0;
+}
+article.card-label .btn-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  margin-left: 2px;
+  border: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0;
+  background-color: var(--desaturated-dark-cyan);
+  cursor: pointer;
+}
+.clear-labels {
   display: flex;
   align-items: center;
 }
-.clear-labels button{
+.clear-labels button {
   width: 60px;
   height: 35px;
   border: none;
@@ -51,6 +73,7 @@ body {
   background-color: #fff;
   color: var(--very-dark-grayish-cyan);
   font-weight: 700;
+  cursor: pointer;
 }
 .card-grid {
   width: 88%;
@@ -64,18 +87,13 @@ body {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 8px 15px rgba(1, 1, 1, 0.3);
-  padding-bottom: 30px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .border-card {
   border-left: 5px solid var(--desaturated-dark-cyan);
 }
 
-.card-info,
-.card-job hr,
-.card-labels {
-  width: 88%;
-  margin: 0 auto;
-}
 .card-info {
   display: grid;
 }
@@ -101,7 +119,7 @@ body {
   color: var(--desaturated-dark-cyan);
 }
 .new-job,
-.featured{
+.featured {
   text-transform: uppercase;
   height: 25px;
   padding: 0 8px 0 8px;
@@ -114,13 +132,13 @@ body {
 .new-job {
   background-color: var(--desaturated-dark-cyan);
 }
-.featured{
+.featured {
   background-color: var(--very-dark-grayish-cyan);
 }
 .new-job span,
-.featured span{
-  margin-top:4px;
-  font-size: .6em;
+.featured span {
+  margin-top: 4px;
+  font-size: 0.6em;
   color: #fff;
   font-weight: 700;
 }
@@ -148,6 +166,7 @@ body {
   padding: 0 8px 0 8px;
 }
 .card-label div {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   display: flex;
@@ -157,12 +176,12 @@ body {
   color: var(--desaturated-dark-cyan);
 }
 
-footer{
+footer {
   margin-top: 30px;
   margin-bottom: 10px;
-  text-align: center; 
-  font-size: .7em;
+  text-align: center;
+  font-size: 0.7em;
 }
-footer a{
+footer a {
   font-weight: 700;
 }
