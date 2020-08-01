@@ -18,6 +18,9 @@ body {
   height: 140px;
   background: var(--desaturated-dark-cyan);
 }
+.App-header .bg-desktop{
+  display: none;
+}
 .App-header img {
   height: 100%;
   width: 100%;
@@ -189,6 +192,12 @@ footer a {
 
 /*Responsive*/
 @media only screen and (min-width: 800px) {
+  .App-header .bg-mobile{
+    display: none;
+  }
+  .App-header .bg-desktop{
+    display: block;
+  }
   section.card-grid{
     max-width: 850px;
   }

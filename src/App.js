@@ -59,7 +59,16 @@ const App = () => {
   return (
     <>
       <header className="App-header">
-        <img src="images/bg-header-mobile.svg" alt="bg-header" />
+        <img
+          className="bg-mobile"
+          src="images/bg-header-mobile.svg"
+          alt="bg-header"
+        />
+        <img
+          className="bg-desktop"
+          src="images/bg-header-desktop.svg"
+          alt="bg-header"
+        />
       </header>
       <main className="App-main">
         {categories[0] === "" ? null : (
