@@ -38,22 +38,22 @@ section.show-labels-selected {
   display: grid;
   grid-template-columns: 1fr auto;
 }
-.show-labels-selected .card-labels {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
 
 .show-labels-selected article.card-label {
+  display: inline-block;
+  padding-right: 0;
+}
+article.card-label .card-label-content {
   display: grid;
   grid-template-columns: 1fr auto;
-  padding-right: 0;
 }
 article.card-label .btn-clear {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 35px;
-  margin-left: 2px;
+  height: 100%;
+  margin-left: 5px;
   border: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

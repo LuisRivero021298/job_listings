@@ -35,14 +35,16 @@ const App = () => {
           <div className="card-labels">
             {categories[0].map((category) => (
               <article key={category + 2} className="card-label">
-                <div>{category}</div>
-                <button
-                  value={category}
-                  onClick={handleClearAfilter}
-                  className="btn-clear"
-                >
-                  <img src="images/icon-remove.svg" alt="X" />
-                </button>
+                <div className="card-label-content">
+                  <div>{category}</div>
+                  <button
+                    value={category}
+                    onClick={handleClearAfilter}
+                    className="btn-clear"
+                  >
+                    <img src="images/icon-remove.svg" alt="X" />
+                  </button>
+                </div>
               </article>
             ))}
           </div>
