@@ -237,4 +237,17 @@ footer a {
     justify-content: flex-end;
     flex-wrap: wrap;
   }
+
+
+  section.show-labels-selected {
+    max-width: 850px;
+  }
+  .show-labels-selected .card-labels{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .show-labels-selected .card-labels .card-label {
+    margin-bottom: 0;
+  }
 }
