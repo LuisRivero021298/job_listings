@@ -185,3 +185,56 @@ footer {
 footer a {
   font-weight: 700;
 }
+
+
+/*Responsive*/
+@media only screen and (min-width: 800px) {
+  section.card-grid{
+    max-width: 850px;
+  }
+  article.card-job {
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+  article.card-job hr{
+    display: none;
+  }
+  .card-job .card-info {
+    column-gap: 15px;
+    row-gap: 5px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .card-info .card-logo{
+    grid-column: 1 / 1;
+    grid-row: 1 / -1;
+    display: flex;
+    align-items: center;
+  }
+  .card-info .card-logo .logo {
+    margin: 0;
+    height: 75px;
+    width: 75px;
+  }
+  .card-info .name-company{
+    align-items: flex-end;
+  }
+  .card-info .name-company h3 {
+    margin: 0;
+    margin-bottom: 3px;
+    margin-right: 15px;
+  }
+  .card-info h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-labels {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+}
