@@ -1,7 +1,6 @@
 import data from "../data/data";
 
 export const getJobs = (category) => {
-  console.log(category);
   const jobList = data.map((job) => {
     return {
       id: job.id,
